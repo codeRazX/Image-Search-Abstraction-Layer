@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+@mixin desktop(){
+    @media (min-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin tablet(){
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+@mixin phone(){
+    @media (min-width: v.$phone){
+        @content;
+    }
+}
+
+@mixin loader-animation($name,$color1,$color2){
+    @keyframes #{$name} {
+        0% {
+          transform: rotate(0deg);
+          border-color: $color1;
+        }
+    
+        50% {
+          transform: scale(1.2) rotate(180deg);
+          border-color: $color2;
+        }
+    
+        100% {
+          transform: rotate(360deg);
+          border-color: $color1;
+        }
+      }
+}

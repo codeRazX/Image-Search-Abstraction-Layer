@@ -1,0 +1,61 @@
+@use 'variables' as v;
+
+.sliders{
+    width: auto;
+    margin: 10rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    display: none;
+
+    &__preview, 
+    &__next{
+        width: 4rem;
+        height: 4rem;
+        border: none;
+        border-radius: 50%;
+        background-color: v.$primaryColor;
+        cursor: pointer;
+        position: relative;
+        transition: transform 300ms linear, background-color 300ms linear;
+    }
+
+    &__preview:hover, 
+    &__next:hover{
+        background-color: black;
+        transform: scale(1.1);
+    }
+    &__preview::before, 
+    &__next::before{
+        content: "";
+        display: block;
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: #E1E1E1;
+        transition: background-color 500ms linear;
+    }
+    &__preview::before{
+        transform: translate(-30%,-50%) rotate(-45deg);
+        clip-path: polygon(0 0, 100% 0, 50% 50%, 0 100%);
+       
+    }
+    &__next::before{
+        transform: translate(-70%,-50%) rotate(45deg);
+        clip-path: polygon(100% 0, 100% 100%, 50% 50%, 0 0);
+    }
+    
+    
+    &__preview:hover::before, 
+    &__next:hover::before {
+        background-color: #9dd6ff;
+      }
+}
+
+#preview{
+    display: none;
+    opacity: 0;
+    animation: appear 500ms linear forwards;
+}

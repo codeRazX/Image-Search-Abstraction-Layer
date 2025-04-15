@@ -1,0 +1,60 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.main{
+
+    margin: 5rem auto;
+    display: none;
+    opacity: 1;
+   
+    h2{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    &__results{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(calc(40rem - 2rem),1fr));
+        gap: 2rem;
+    }
+
+
+}
+
+.card{
+    box-shadow: 0 0 5px v.$primaryColor;
+    border-radius: 5px;
+   
+    &__img{
+        border: 5px double black;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        max-height: 50rem;
+    }
+    &__block{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        p{
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+    &__description{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    &__link{
+       
+        text-decoration: none;
+        color: darkblue;
+        max-width: 100%;
+        font-weight: normal;
+        word-break: break-all; 
+        overflow-wrap: break-word;
+      
+       
+    }
+}
